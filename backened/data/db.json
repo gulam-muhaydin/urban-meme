@@ -1,0 +1,36 @@
+{
+  "users": {
+    "admin@watchearn.com": {
+      "name": "Admin",
+      "email": "admin@watchearn.com",
+      "password": "admin",
+      "planId": "premium",
+      "createdAt": "2026-02-05T00:00:00.000Z"
+    },
+    "user@example.com": {
+      "name": "Test User",
+      "email": "user@example.com",
+      "password": "password123",
+      "planId": "basic",
+      "createdAt": "2026-02-05T00:00:00.000Z",
+      "paymentSubmitted": false,
+      "paymentNumber": "03001234567",
+      "paymentSlip": "uploaded",
+      "approved": true
+    }
+  },
+  "pendingPayments": [],
+  "approvals": {},
+  "withdrawals": [],
+  "points": {
+    "user@example.com": 10
+  },
+  "videoProgress": {
+    "user@example.com": {
+      "date": "Thu Feb 05 2026",
+      "ids": [
+        1
+      ]
+    }
+  }
+}

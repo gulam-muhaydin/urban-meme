@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - WatchEarn</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div id="screen-main" class="screen screen-main hidden">
+        <div class="app-layout">
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <a href="index.html" class="sidebar-logo"><img src="Black_Modern_A_letter_Logo-removebg-preview.png" alt="WatchEarn"></a>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="how-it-works.html" class="sidebar-link">
+                        <i class="ph ph-info"></i> How It Works
+                    </a>
+                    <a href="videos.html" class="sidebar-link">
+                        <i class="ph ph-play-circle"></i> Videos
+                    </a>
+                    <a href="withdraw.html" class="sidebar-link">
+                        <i class="ph ph-money"></i> Withdraw
+                    </a>
+                    <a href="referral.html" class="sidebar-link">
+                        <i class="ph ph-users"></i> Referral
+                    </a>
+                    <a href="dashboard.html" class="sidebar-link active">
+                        <i class="ph ph-chart-bar"></i> Dashboard
+                    </a>
+                </nav>
+                <div class="sidebar-footer">
+                    <button type="button" class="btn btn-text btn-logout-sidebar" id="btn-logout-sidebar">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="main-content-wrap">
+                <header class="header">
+                    <div class="container header-inner">
+                        <div class="mobile-logo-wrap">
+                             <a href="index.html" class="logo mobile-only"><img src="Black_Modern_A_letter_Logo-removebg-preview.png" alt="WatchEarn"></a>
+                        </div>
+                        
+                        <div class="header-right">
+                            <div class="user-profile-wrap">
+                                <div class="user-profile" id="user-profile-btn">
+                                    <div class="user-avatar"><i class="ph ph-user"></i></div>
+                                </div>
+                                <div class="profile-dropdown" id="profile-dropdown">
+                                    <div class="dropdown-header">
+                                        <p class="dropdown-name" id="dropdown-name">User Name</p>
+                                        <p class="dropdown-email" id="dropdown-email">user@email.com</p>
+                                    </div>
+                                    <a href="edit-profile.html" class="dropdown-item" id="btn-edit-profile-link">
+                                        <i class="ph ph-pencil-simple"></i> Edit Profile
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="points-badge">
+                                <div class="points-icon"><i class="ph ph-coins"></i></div>
+                                <div class="points-info">
+                                    <span class="points-label">Balance</span>
+                                    <span class="points-value" id="header-points">0</span>
+                                </div>
+                            </div>
+                            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mobile-nav" id="mobile-nav">
+                        <a href="how-it-works.html" class="mobile-nav-link">How It Works</a>
+                        <a href="videos.html" class="mobile-nav-link">Videos</a>
+                        <a href="withdraw.html" class="mobile-nav-link">Withdraw</a>
+                        <a href="referral.html" class="mobile-nav-link">Referral</a>
+                        <a href="dashboard.html" class="mobile-nav-link active">Dashboard</a>
+                        <div class="mobile-points">
+                            <span>Points:</span>
+                            <span id="mobile-points">0</span>
+                        </div>
+                        <button type="button" class="btn btn-text btn-logout-main" id="btn-logout-main">Logout</button>
+                    </div>
+                </header>
+
+                <main>
+                    <section class="dashboard-section" id="dashboard">
+                        <div class="container">
+                            <h2 class="section-title">Your Dashboard</h2>
+                            <div class="dashboard-grid">
+                                <div class="dashboard-card">
+                                    <h3 class="dashboard-card-title">Total Points</h3>
+                                    <p class="dashboard-card-value" id="total-points">0</p>
+                                    <p class="dashboard-card-hint">Earn more by watching videos</p>
+                                </div>
+                                <div class="dashboard-card">
+                                    <h3 class="dashboard-card-title">Videos Watched</h3>
+                                    <p class="dashboard-card-value" id="videos-watched">0</p>
+                                    <p class="dashboard-card-hint">Total completed today</p>
+                                </div>
+                                <div class="dashboard-card">
+                                    <h3 class="dashboard-card-title">Redeemable</h3>
+                                    <p class="dashboard-card-value" id="redeemable-value">PKR 0</p>
+                                    <p class="dashboard-card-hint" id="redeemable-hint">1000 points = PKR 10</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchEarn Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Admin specific overrides if needed */
+        body {
+            background-color: #f0f2f5;
+        }
+        .admin-login-wrap {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .admin-login-card {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .admin-logo {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Screen: Admin Login -->
+    <div id="screen-admin-login" class="screen">
+        <div class="admin-login-wrap">
+            <div class="admin-login-card">
+                <div class="admin-logo"><img src="Black_Modern_A_letter_Logo-removebg-preview.png" alt="WatchEarn Admin" style="height: 50px;"></div>
+                <form id="form-admin-login">
+                    <label class="form-label">Email</label>
+                    <input type="email" id="admin-email" class="form-input" required placeholder="admin@watchearn.com">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="admin-password" class="form-input" required placeholder="Password">
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">Login</button>
+                </form>
+                <p id="admin-auth-message" class="auth-message hidden"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen: Admin Dashboard -->
+    <div id="screen-admin-dashboard" class="screen hidden">
+        <header class="header">
+            <div class="container header-inner">
+                <div class="logo"><img src="Black_Modern_A_letter_Logo-removebg-preview.png" alt="WatchEarn Admin" style="height: 40px;"></div>
+                <button type="button" class="btn btn-text" id="btn-logout-admin">Logout</button>
+            </div>
+        </header>
+        <main class="container admin-container">
+            <h2 class="section-title">Admin Dashboard</h2>
+            
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p id="admin-total-users">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Approvals</h3>
+                    <p id="admin-pending-count">0</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Pending Approvals</h3>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Plan</th>
+                            <th>Payment Info</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-pending-list">
+                        <!-- Pending users will be injected here -->
+                    </tbody>
+                </table>
+                <p id="no-pending-msg" class="empty-msg hidden">No pending approvals.</p>
+            </div>
+
+            <h3 class="subsection-title">All Users</h3>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Plan</th>
+                            <th>Status</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-users-list">
+                        <!-- All users will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px; text-align: center;">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <img id="preview-img" src="" alt="Slip Preview" style="max-width: 100%; border-radius: 8px;">
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
